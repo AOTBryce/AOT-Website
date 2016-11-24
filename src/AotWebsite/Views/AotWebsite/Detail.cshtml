@@ -11,6 +11,8 @@
         "Project 3: 2017",
         "Project 4: 2018"
     };
+    //below value to be swapped in for projects in order to demonstrate usefulness of if statement
+    var projects2 = new string[] { };
 }
 
 <!DOCTYPE html>
@@ -28,8 +30,18 @@
         <h5>Description</h5>
         <div>@Html.Raw(description)</div>
 
-        <h5>Projects</h5>
-        <div>@projects</div>
+        @if (projects.Length > 0)
+        {
+        <h5>Projects:</h5>
+        <div>
+            <ul>
+                @foreach (var project in projects)
+                {
+                    <li>@project</li>
+                }
+            </ul>
+        </div>
+        }
     </div>
 </body>
 </html>
