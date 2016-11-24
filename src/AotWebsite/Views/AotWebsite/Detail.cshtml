@@ -1,5 +1,16 @@
 ﻿@{
     Layout = null;
+
+    var companyName = "AOT";
+    var startYear = 2016;
+    var description = "<p><u>Nothing in this world thats worth having comes easy</u></p>";
+    var projects = new string[]
+    {
+        "Project 1: 2016",
+        "Project 2: 2017",
+        "Project 3: 2017",
+        "Project 4: 2018"
+    };
 }
 
 <!DOCTYPE html>
@@ -11,7 +22,14 @@
 </head>
 <body>
     <div>
-        <h1>Hello from our view</h1>
+        <h1>@companyName</h1>
+        <h2>Founded: @startYear</h2>
+
+        <h5>Description</h5>
+        <div>@Html.Raw(description)</div>
+
+        <h5>Projects</h5>
+        <div>@projects</div>
     </div>
 </body>
 </html>
