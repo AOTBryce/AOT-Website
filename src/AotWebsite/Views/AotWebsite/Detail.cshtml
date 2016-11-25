@@ -1,35 +1,32 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/html5up-future-imperfect/index.cshtml";
+    //Layout = "~/Views/Shared/_Layout2.cshtml";
+
+    ViewBag.Title = "AOT";
 
 }
 
 <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.CompanyName</title>
-</head>
-<body>
-    <div>
-        <h1>@ViewBag.CompanyName</h1>
-        <h2>Founded: @ViewBag.StartYear</h2>
 
-        <h5>Description</h5>
-        <div>@Html.Raw(ViewBag.Description)</div>
+<h1>@ViewBag.CompanyName</h1>
+<h2>Founded: @ViewBag.StartYear</h2>
 
-        @if (ViewBag.Projects.Length > 0)
+<h5>Description</h5>
+<div>@Html.Raw(ViewBag.Description)</div>
+
+@if (ViewBag.Developers.Length > 0)
+{
+
+<h5>Developers:</h5>
+<div>
+    <ul>
+        @foreach (var developer in ViewBag.Developers)
         {
-        <h5>Projects:</h5>
-        <div>
-            <ul>
-                @foreach (var project in ViewBag.Projects)
-                {
-                    <li>@project</li>
-                }
-            </ul>
-        </div>
+            <li>@developer</li>
         }
-    </div>
-</body>
-</html>
+    </ul>
+</div>
+}
+
